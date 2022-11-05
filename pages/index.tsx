@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { GetStaticProps, NextPage } from 'next'
+import Layout from '../components/layout';
 import Post from '../components/post'
 import { PostData, PostDataListProps } from '../types/postdata'
 import { GetPosts } from '../lib/postdata_api'
@@ -19,17 +20,18 @@ const IndexPage: NextPage<PostDataListProps> = ({
 }: PostDataListProps) => {
   return (
     <main>
-      <Head>
-        <title>shiimaxx.com</title>
-      </Head>
-
-      <h1>Entries</h1>
-
-      <section>
-        {postDataList.map((post: PostData) => (
-          <Post {...post} key={post.url} />
-        ))}
-      </section>
+      <Layout>
+        <Head>
+          <title>shiimaxx.com</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <h1>shiimaxx.com</h1>
+        <section>
+          {postDataList.map((post: PostData) => (
+            <Post {...post} key={post.url} />
+          ))}
+        </section>
+      </Layout>
     </main>
   )
 }

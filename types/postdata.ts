@@ -5,6 +5,7 @@ export interface Entries {
 export interface PostData {
   title: string
   url: string
+  created_at: string
 }
 
 export interface PostDataProps {
