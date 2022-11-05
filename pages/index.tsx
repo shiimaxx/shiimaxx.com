@@ -20,14 +20,14 @@ const IndexPage: NextPage<PostDataListProps> = ({
   return (
     <main>
       <Head>
-        <title>Home page</title>
+        <title>shiimaxx.com</title>
       </Head>
 
-      <h1>List of posts</h1>
+      <h1>Entries</h1>
 
       <section>
         {postDataList.map((post: PostData) => (
-          <Post {...post} key={post.id} />
+          <Post {...post} key={post.url} />
         ))}
       </section>
     </main>

@@ -1,8 +1,10 @@
+export interface Entries {
+  entries: PostData[]
+}
+
 export interface PostData {
-  userId: number
-  id: number
   title: string
-  body: string
+  url: string
 }
 
 export interface PostDataProps {
