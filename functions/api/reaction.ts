@@ -76,7 +76,7 @@ const postReaction = async (slug: string, target: string, reacted: boolean, user
 	])
 }
 
-app.get('/', async (c) => {
+app.get('/api/reaction', async (c) => {
 	const slug = c.req.query('slug')
 	if (!slug) return c.json({}, 400)
 	const userId = ensureUserId(c)
@@ -84,7 +84,7 @@ app.get('/', async (c) => {
 	return c.json(payload)
 })
 
-app.post('/', async (c) => {
+app.post('/api/reaction', async (c) => {
 	const body = await c.req.json().catch(() => null)
 	const slug = body?.slug
 	const target = body?.target
