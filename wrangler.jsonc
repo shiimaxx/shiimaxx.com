@@ -1,5 +1,5 @@
 {
-  "$schema": "functions/node_modules/wrangler/config-schema.json",
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "backend",
   "main": "functions/api/index.ts",
   "compatibility_date": "2025-11-25"
