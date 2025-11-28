@@ -15,7 +15,7 @@ type Env = {
 type CountRecord = Record<(typeof EMOJIS)[number], number>
 
 // https://github.com/isunjn/serene/blob/d13dc8def6257dadd911bc018699835b51c50951/USAGE.md#L268-L281
-app.get('/api/reaction', async (c) => {
+app.get('/reaction', async (c) => {
 	const slug = c.req.query('slug')
 	if (!slug) return c.json({}, 400)
 
@@ -37,7 +37,7 @@ app.get('/api/reaction', async (c) => {
 })
 
 // https://github.com/isunjn/serene/blob/d13dc8def6257dadd911bc018699835b51c50951/USAGE.md#L283-L301
-app.post('/api/reaction', async (c) => {
+app.post('/reaction', async (c) => {
 	const body = await c.req.json().catch(() => null)
 	const slug = body?.slug
 	const target = body?.target
