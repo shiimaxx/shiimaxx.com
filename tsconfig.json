@@ -8,7 +8,7 @@
     "lib": [
       "ESNext"
     ],
-		"types": ["./types.d.ts"],
+		"types": ["./functions/types.d.ts"],
     "jsx": "react-jsx",
     "jsxImportSource": "hono/jsx"
   }
