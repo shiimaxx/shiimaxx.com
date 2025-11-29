@@ -1,4 +1,5 @@
 import { Hono } from 'hono'
+import type { Context } from 'hono'
 import { cors } from 'hono/cors'
 import { handle } from 'hono/cloudflare-pages'
 import { getCookie, setCookie } from 'hono/cookie'
@@ -14,17 +15,18 @@ type Env = {
 }
 
 type CountRecord = Record<(typeof EMOJIS)[number], number>
+type AppContext = Context<{ Bindings: Env }>
 
-const ensureUserId = (c: Parameters<typeof app.get>[1]) => {
+const ensureUserId = (c: AppContext) => {
 	const existing = getCookie(c, COOKIE_NAME)
 	if (existing) return existing
 
 	const newId = crypto.randomUUID()
 
 	setCookie(c, COOKIE_NAME, newId, {
-		path: '/',
+		path: '/api/reaction',
 		httpOnly: true,
-		sameSite: 'Lax',
+		sameSite: 'Strict',
 		secure: new URL(c.req.url).protocol === 'https:',
 		maxAge: 60 * 60 * 24 * 365,
 	})
