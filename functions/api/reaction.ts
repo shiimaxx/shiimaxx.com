@@ -105,9 +105,8 @@ app.get('/api/reaction', async (c) => {
 	const slug = c.req.query('slug')
 	if (!slug) return c.json({}, 400)
 	const userId = ensureUserId(c)
-	// const payload = await getReaction(slug, userId, c.env)
-	// return c.json(payload)
-	return c.text('ok')
+	const payload = await getReaction(slug, userId, c.env)
+	return c.json(payload)
 })
 
 app.post('/api/reaction', async (c) => {
