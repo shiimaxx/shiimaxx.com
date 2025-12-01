@@ -80,6 +80,7 @@ const postReaction = async (slug: string, target: string, reacted: boolean, user
 
 app.get('/api/reaction', async (c) => {
 	const origin = c.req.header('Origin') || ''
+	console.log('Origin:', origin)
 	if (origin !== 'https://shiimaxx.com') {
 		return c.json({}, 403)
 	}
