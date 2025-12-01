@@ -17,6 +17,25 @@ type Env = {
 type CountRecord = Record<(typeof EMOJIS)[number], number>
 type AppContext = Context<{ Bindings: Env }>
 
+const isAllowedRequest = (c: AppContext) => {
+	const fetchSite = c.req.header('sec-fetch-site')
+	if (fetchSite === 'same-origin' || fetchSite === 'same-site') return true
+
+	const origin = c.req.header('origin')
+	if (origin === 'https://shiimaxx.com') return true
+
+	const referer = c.req.header('referer')
+	if (referer) {
+		try {
+			if (new URL(referer).host === 'shiimaxx.com') return true
+		} catch {
+			// ignore parse errors
+		}
+	}
+
+	return false
+}
+
 const ensureUserId = (c: AppContext) => {
 	const existing = getCookie(c, COOKIE_NAME)
 	if (existing) return existing
@@ -79,9 +98,7 @@ const postReaction = async (slug: string, target: string, reacted: boolean, user
 }
 
 app.get('/api/reaction', async (c) => {
-	const origin = c.req.header('Origin') || ''
-	console.log('Origin:', origin)
-	if (origin !== 'https://shiimaxx.com') {
+	if (!isAllowedRequest(c)) {
 		return c.json({}, 403)
 	}
 
@@ -94,8 +111,7 @@ app.get('/api/reaction', async (c) => {
 })
 
 app.post('/api/reaction', async (c) => {
-	const origin = c.req.header('Origin') || ''
-	if (origin !== 'https://shiimaxx.com') {
+	if (!isAllowedRequest(c)) {
 		return c.json({}, 403)
 	}
 
