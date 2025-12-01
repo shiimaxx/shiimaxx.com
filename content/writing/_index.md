@@ -1,6 +1,6 @@
 +++
-title = "Writing"
-description = "My blog site."
+title = "shiimaxx.com"
+description = "A collection of my writings and articles."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -8,10 +8,10 @@ insert_anchor_links = "right"
 generate_feeds = true
 
 [extra]
-lang = "en"
+lang = "ja"
 
 title = "Writing"
-subtitle = "I write about ...."
+subtitle = "Writing is thinking"
 
 date_format = "%b %-d, %Y"
 

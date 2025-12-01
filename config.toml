@@ -6,9 +6,9 @@
 #=========================================================================================
 
 base_url = "https://shiimaxx.com"
-title = "shiimaxx.com"
-description = "xxxx xxxx xxxx"
-default_language = "en"
+title = "Takatada Yoshima"
+description = "Most cherish love."
+default_language = "ja"
 theme = "serene"
 output_dir = "public"
 compile_sass = true

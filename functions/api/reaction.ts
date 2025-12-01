@@ -79,14 +79,25 @@ const postReaction = async (slug: string, target: string, reacted: boolean, user
 }
 
 app.get('/api/reaction', async (c) => {
+	const origin = c.req.header('Origin') || ''
+	if (origin !== 'https://shiimaxx.com') {
+		return c.json({}, 403)
+	}
+
 	const slug = c.req.query('slug')
 	if (!slug) return c.json({}, 400)
 	const userId = ensureUserId(c)
-	const payload = await getReaction(slug, userId, c.env)
-	return c.json(payload)
+	// const payload = await getReaction(slug, userId, c.env)
+	// return c.json(payload)
+	return c.text('ok')
 })
 
 app.post('/api/reaction', async (c) => {
+	const origin = c.req.header('Origin') || ''
+	if (origin !== 'https://shiimaxx.com') {
+		return c.json({}, 403)
+	}
+
 	const body = await c.req.json().catch(() => null)
 	const slug = body?.slug
 	const target = body?.target

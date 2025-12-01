@@ -2,7 +2,7 @@
 template = 'home.html'
 
 [extra]
-lang = 'en'
+lang = 'ja'
 
 # Show footer in home page
 footer = false
