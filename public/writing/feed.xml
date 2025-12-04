@@ -5,16 +5,24 @@
 	<link rel="self" type="application/atom+xml" href="https://shiimaxx.com/writing/feed.xml"/>
   <link rel="alternate" type="text/html" href="https://shiimaxx.com/writing/"/>
   
-	<updated>2025-12-01T00:00:00+00:00</updated>
+	<updated>2025-12-04T00:00:00+00:00</updated>
 	
 	<id>https://shiimaxx.com/writing/feed.xml</id>
 	<entry xml:lang="ja">
 		<title>ウェブサイトの再構築</title>
-		<published>2025-12-01T00:00:00+00:00</published>
-		<updated>2025-12-01T00:00:00+00:00</updated>
+		<published>2025-12-04T00:00:00+00:00</published>
+		<updated>2025-12-04T00:00:00+00:00</updated>
 		<link rel="alternate" type="text/html" href="https://shiimaxx.com/writing/rebuilding-my-website/"/>
 		<id>https://shiimaxx.com/writing/rebuilding-my-website/</id>
     
-		<content type="html" xml:base="https://shiimaxx.com/writing/rebuilding-my-website/"></content>
+		<content type="html" xml:base="https://shiimaxx.com/writing/rebuilding-my-website/">&lt;p&gt;このウェブサイト（shiimaxx.com）を再構築しました。元々は自分が外部サービスに書いた記事の一覧を表示するだけの簡素なものだったのですが、今後はこのウェブサイト自体にもコンテンツを載せられるようにしました。
+最近になって文章を書くことに対して興味が湧いてきて、自分用の書くための場所がほしくなったというのが理由です。&lt;&#x2F;p&gt;
+&lt;p&gt;元々はNext.jsのStatic Site Generationベースで作っていました。ビルド時に自作Web APIから自分が書いた記事情報を取ってきてレンダリングするという仕組みです。Web APIはApp Engineでホスティングしていました。&lt;&#x2F;p&gt;
+&lt;p&gt;前述した理由もあってウェブサイトを作り直すことにしたのですが、ウェブサイト自体のメンテナンスにあまり時間をとれないということもありStatic Site Generatorを使うことにしました。&lt;&#x2F;p&gt;
+&lt;p&gt;具体的にはZolaというStatic Site Generatorを使っています。ChatGPTで「Static Site Generator 2025」をリストアップしてもらいつつ、自分の用途にあっていそうなものに絞り込んでいったところ、最終的にEleventyとZolaが候補になりました。Rust製でCLIベースで操作できるというところに惹かれたのと、今使っているSereneというテーマがシンプルで自分のイメージにあっていたという理由でZolaを使うことにしました。&lt;&#x2F;p&gt;
+&lt;p&gt;Sereneにはリアクション機能があり、バックエンドAPIを自分で用意すれば記事ページにリアクションボタンを設置できます（このページの右下に表示されているやつです）。
+いくつかリファレンス実装もあったのですが、せっかくなので触ってみたいなと思っていたHonoを使ってバックエンドAPIを実装してみました。自分で書いたコードがまったくないというのも少しさみしいなと思っていたので、ちょうどよい規模感でコードが書ける余地があってよかったです。&lt;&#x2F;p&gt;
+&lt;p&gt;ホスティングにはCloudflareを使っていて、静的コンテンツの配信はPages、リアクション機能用のバックエンドAPIはPages Functions、バックエンドAPIで使うデータストアはWorkers KVを使っています。&lt;&#x2F;p&gt;
+</content>
 	</entry>
 </feed>
