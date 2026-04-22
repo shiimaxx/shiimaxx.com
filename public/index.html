@@ -78,7 +78,7 @@
   
 
   
-    <link id="hl" rel="stylesheet" type="text/css" href="https://shiimaxx.com/hl-light.css" />
+    <link id="hl" rel="stylesheet" type="text/css" href="https://shiimaxx.com/giallo-light.css" />
   
 
 
@@ -90,11 +90,11 @@
   
   <script>
     const theme = sessionStorage.getItem('theme');
-    const match = window.matchMedia("(prefers-color-scheme: dark)").matches
+    const match = window.matchMedia("(prefers-color-scheme: dark)").matches;
     if ((theme && theme == 'dark') || (!theme && match)) {
       document.body.classList.add('dark');
       const hl = document.querySelector('link#hl');
-      if (hl) hl.href = 'https://shiimaxx.com/hl-dark.css';
+      if (hl) hl.href = 'https://shiimaxx.com/giallo-dark.css';
     }
   </script>
   
