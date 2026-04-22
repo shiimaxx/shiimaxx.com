@@ -22,7 +22,7 @@ DBインポートツールの導入後、ツールの利用方法に関する興
 
 ## 自動リファクタリングシステムの制約がコードベースの品質向上を促す（Spotifyの事例）
 
-Spotifyのブログ記事『Fleet Management at Spotify (Part 3): Fleet-wide Refactoring』で紹介されていた事例です。このブログ記事は、Spotifyが抱える何千ものコンポーネント（Fleet: 艦隊）をいかに効率よく管理しているかを紹介するブログシリーズのひとつで、Fleet全体に対する横断的なリファクタリング（Fleet-wide Refactoring）を効果的に行うための仕組みを紹介しています。
+Spotifyのブログ記事『[Fleet Management at Spotify (Part 3): Fleet-wide Refactoring](https://engineering.atspotify.com/2023/05/fleet-management-at-spotify-part-3-fleet-wide-refactoring)』で紹介されていた事例です。このブログ記事は、Spotifyが抱える何千ものコンポーネント（Fleet: 艦隊）をいかに効率よく管理しているかを紹介するブログシリーズのひとつで、Fleet全体に対する横断的なリファクタリング（Fleet-wide Refactoring）を効果的に行うための仕組みを紹介しています。
 
 Fleet-wide Refactoringの中核を担うのは、任意のリファクタリングをFleet全体にプルリクエストとして展開したうえで自動マージする仕組みです。
 
