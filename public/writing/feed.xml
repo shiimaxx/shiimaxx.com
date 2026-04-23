@@ -9,7 +9,7 @@
 	
 	<id>https://shiimaxx.com/writing/feed.xml</id>
 	<entry xml:lang="ja">
-		<title>自動化における制約をガイドとして捉える</title>
+		<title>効果的な自動化：ガイドとしての制約</title>
 		<published>2026-04-22T00:00:00+00:00</published>
 		<updated>2026-04-22T00:00:00+00:00</updated>
 		<link rel="alternate" type="text/html" href="https://shiimaxx.com/writing/constraints-as-guide/"/>
