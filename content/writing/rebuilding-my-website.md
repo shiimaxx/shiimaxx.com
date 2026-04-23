@@ -1,6 +1,7 @@
 +++
 title = "ウェブサイトの再構築"
 date = 2025-12-04
+description = "Next.jsのStatic Site GenerationベースのWebサイトを静的サイトジェネレーターのZolaとCloudflareスタックで再構築しました。"
 
 +++
 
