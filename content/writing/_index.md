@@ -1,6 +1,6 @@
 +++
-title = "shiimaxx.com"
-description = "A collection of my writings and articles."
+title = "Contextual"
+description = "Essays by shiimaxx, beneath the surface."
 sort_by = "date"
 template = "blog.html"
 page_template = "post.html"
@@ -10,8 +10,8 @@ generate_feeds = true
 [extra]
 lang = "ja"
 
-title = "Writing"
-subtitle = "Writing is thinking"
+title = "Contextual"
+subtitle = "Beneath the surface, in context."
 
 date_format = "%b %-d, %Y"
 
