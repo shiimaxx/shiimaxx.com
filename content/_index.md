@@ -14,7 +14,8 @@ id = "shiimaxx"
 avatar = "img/avatar.webp"
 links = [
     { name = "GitHub", icon = "github", url = "https://github.com/shiimaxx" },
-    { name = "X", icon = "twitter-x-line", url = "https://x.com/shiimaxx" },
+    { name = "Bluesky", icon = "bluesky", url = "https://bsky.app/profile/shiimaxx.com" },
+    { name = "Instagram", icon = "instagram", url = "https://www.instagram.com/shiimaxx" },
 ]
 
 # Show a few recent posts in home page
