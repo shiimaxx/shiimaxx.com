@@ -5,20 +5,26 @@
   {%- set og_url = page.permalink -%}
   {%- set og_type = "article" -%}
   {%- set og_site_name = section.title | default(value=config.title) -%}
+  {%- set og_image_title = page.title | urlencode -%}
+  {%- set og_image = config.base_url ~ "/api/og?title=" ~ og_image_title -%}
+  {%- set twitter_card = "summary_large_image" -%}
 {%- elif section -%}
   {%- set og_title = section.title | default(value=config.title) -%}
   {%- set og_description = section.description | default(value=config.description) -%}
   {%- set og_url = section.permalink -%}
   {%- set og_type = "website" -%}
   {%- set og_site_name = section.title | default(value=config.title) -%}
+  {%- set og_image = get_url(path="img/avatar.webp") -%}
+  {%- set twitter_card = "summary" -%}
 {%- else -%}
   {%- set og_title = config.title -%}
   {%- set og_description = config.description -%}
   {%- set og_url = config.base_url -%}
   {%- set og_type = "website" -%}
   {%- set og_site_name = config.title -%}
+  {%- set og_image = get_url(path="img/avatar.webp") -%}
+  {%- set twitter_card = "summary" -%}
 {%- endif -%}
-{%- set og_image = get_url(path="img/avatar.webp") -%}
 
 <meta property="og:type" content="{{ og_type }}">
 <meta property="og:site_name" content="{{ og_site_name }}">
@@ -28,7 +34,7 @@
 <meta property="og:description" content="{{ og_description }}">
 <meta property="og:image" content="{{ og_image }}">
 
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="{{ twitter_card }}">
 <meta name="twitter:title" content="{{ og_title }}">
 <meta name="twitter:description" content="{{ og_description }}">
 <meta name="twitter:image" content="{{ og_image }}">
