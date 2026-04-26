@@ -16,7 +16,8 @@ minify_html = false # Keep this false, as it may cause issues with some styles
 build_search_index = false # Keep this false, search is temporarily unsupported
 generate_feeds = false # Whether to generate a feed file in root, read docs for more info about rss feed
 feed_filenames = ["feed.xml"] # "feed.xml" | "atom.xml" | "rss.xml", read docs for more info
-taxonomies = [{ name = "tags" }, { name = "categories" }]
+taxonomies = [{ name = "tags" }]
+taxonomy_root = "writing"
 
 [markdown]
 render_emoji = false
