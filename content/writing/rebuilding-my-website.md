@@ -2,8 +2,9 @@
 title = "ウェブサイトの再構築"
 date = 2025-12-04
 description = "Next.jsのStatic Site GenerationベースのWebサイトを静的サイトジェネレーターのZolaとCloudflareスタックで再構築しました。"
-tags = ["Build"]
 
+[taxonomies]
+tags = ["Build"]
 +++
 
 このウェブサイト（shiimaxx.com）を再構築しました。元々は自分が外部サービスに書いた記事の一覧を表示するだけの簡素なものだったのですが、今後はこのウェブサイト自体にもコンテンツを載せられるようにしました。
